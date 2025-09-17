@@ -1,3 +1,3 @@
 public enum Color {
-    BlACK, WHITE, RED, YELLOW
+    BLACK, WHITE, RED, YELLOW
 }

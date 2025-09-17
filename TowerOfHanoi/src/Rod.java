@@ -5,7 +5,6 @@ public class Rod {
     private final Disk[] disks;
 
     public Rod(int capacity){
-        // Aggregation
         disks = new Disk[capacity];
     }
 
@@ -52,6 +51,11 @@ public class Rod {
     public boolean isEmpty(){
         return n==0;
     }
+
+    public Disk[] copyDiskArr() {
+        return Arrays.copyOf(disks, n);
+    }
+
 
     @Override
     public String toString() {
