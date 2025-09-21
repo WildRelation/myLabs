@@ -29,8 +29,7 @@ public class Card implements Comparable<Card>{
 
     @Override
     public String toString() {
-        String info = rank + " of " + suit;
-        return info;
+        return rank + " of " + suit;
     }
 
     public String toShortString() {

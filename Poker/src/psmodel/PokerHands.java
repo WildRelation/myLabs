@@ -20,7 +20,6 @@ public class PokerHands {
     }
 
 
-
     private static boolean isPair(Pile p){
         return hasNOfAKind(p, 2) == 1;
     }
@@ -41,16 +40,13 @@ public class PokerHands {
         return hasNOfAKind(p, 3) == 1 && hasNOfAKind(p, 2) == 1;
     }
 
-    private static boolean isFlush(Pile p) {
-        if (p.getSize() == 0) return false;
-//VIKTIG
-        Suit firstSuit = p.getCards().getFirst().getSuit();
-        for (Card c : p.getCards()) {
-            if (c.getSuit() != firstSuit) {
-                return false;
+    private static boolean isFlush(Pile pile) {
+        for (Suit suit : Suit.values()) {
+            if (pile.noOfSuit(suit) == 5) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
 

@@ -31,9 +31,7 @@ public class Deck {
         return theCards.size();
     }
 
-    /**
-     * Return, and remove, the card at the top of the deck.
-     */
+
     public Card dealCard() {
         return theCards.remove(theCards.size() - 1);
     }
@@ -45,8 +43,8 @@ public class Deck {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("[");
-        if (theCards.size() > 0) {
-            builder.append(theCards.get(0).toShortString());
+        if (!theCards.isEmpty()) {
+            builder.append(theCards.getFirst().toShortString());
             for (int i = 1; i < theCards.size(); i++) {
                 builder.append(", ").append(theCards.get(i).toShortString());
             }

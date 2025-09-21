@@ -51,7 +51,6 @@ public class PsUserInterface {
         myGame.initNewGame();
         System.out.println("Ready.");
 
-        // Kör spelet tills det är slut
         while (!myGame.isGameOver()) {
             showGameState();
             Card nextCard = myGame.pickNextCard();

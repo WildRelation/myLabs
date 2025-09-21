@@ -7,7 +7,7 @@ public enum PokerCombo {
     THREE_OF_A_KIND(10),
     FULL_HOUSE(25), //kåk
     FOUR_OF_A_KIND(50),
-    FLUSH(20); //färg
+    FLUSH(20);
 
     private final int value;
     PokerCombo(int value){

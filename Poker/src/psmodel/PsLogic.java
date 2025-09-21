@@ -11,7 +11,7 @@ public class PsLogic implements IPsLogic {
     private Card nextCard;
     private int cardCount;
 
-    private static final int MAX_CARDS_IN_FILE = 5;
+    private static final int MAX_CARDS_IN_PILE = 5;
 
     public PsLogic(){
         deck = new Deck();
@@ -24,6 +24,7 @@ public class PsLogic implements IPsLogic {
     @Override
     public void initNewGame(){
         deck.shuffle();
+        nextCard = null;
         cardCount = 0;
     }
 
@@ -35,16 +36,17 @@ public class PsLogic implements IPsLogic {
     @Override
     public Card pickNextCard() throws IllegalStateException {
         if(nextCard != null){
-            throw new IllegalStateException("No card drawn yet");
+            throw new IllegalStateException("You must place the current card before drawing another");
         }
         Card dealt = deck.dealCard();
-        if(nextCard != null){
-            throw new IllegalStateException("No more cards in the game");
+        if(dealt == null){
+            throw new IllegalStateException("No more cards in the deck");
         }
         nextCard = dealt;
         cardCount++;
         return nextCard;
     }
+
 
     @Override
     public void addCardToPile(int pile) throws IllegalStateException {
@@ -54,8 +56,8 @@ public class PsLogic implements IPsLogic {
         if(pile < 0 || pile >= piles.length){
             throw new IllegalStateException("Pile not valid");
         }
-        if (piles[pile].getSize() >= MAX_CARDS_IN_FILE){
-            throw new IllegalStateException("This pile has already 5 cards. Choose another pile");
+        if (piles[pile].getSize() >= MAX_CARDS_IN_PILE){
+            throw new IllegalStateException("This pile has already 5 cards. PLease choose another pile");
         }
         piles[pile].add(nextCard);
         nextCard = null; //WATCH THIS
@@ -65,8 +67,6 @@ public class PsLogic implements IPsLogic {
     public boolean isGameOver() {
         return cardCount >= 25;
     }
-
-
 
     @Override
     public List<Pile> getPiles() {
