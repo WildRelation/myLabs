@@ -1,3 +1,5 @@
+package cardmodel;
+
 public class Card implements Comparable<Card>{
 
     private final Rank rank;
@@ -51,16 +53,16 @@ public class Card implements Comparable<Card>{
         }
         switch (suit) {
             case SPADES:
-                info += '\u2660';
+                info += '♠';
                 break;
             case HEARTS:
-                info += '\u2764';
+                info += '❤';
                 break;
             case CLUBS:
-                info += '\u2663';
+                info += '♣';
                 break;
             case DIAMONDS:
-                info += '\u2666';
+                info += '♦';
                 break;
             default:
                 ;
@@ -71,7 +73,7 @@ public class Card implements Comparable<Card>{
     @Override
     public int compareTo(Card o) {
         int result = this.suit.ordinal() - o.suit.ordinal();
-        if(result ==0){
+        if(result == 0){
             result = this.getRankValue() - o.getRankValue();
         }
         return result;
@@ -85,7 +87,4 @@ public class Card implements Comparable<Card>{
         //return this.suit == c.suit && this.rank == c.rank;
         return this.compareTo(c) == 0;
     }
-
-
-
 }

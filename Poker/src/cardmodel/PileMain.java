@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package cardmodel;
 
 public class PileMain {
 
@@ -19,8 +19,8 @@ public class PileMain {
         System.out.println("first hand : "+ hand1);
         System.out.println("second hand: " + hand2);
 
-        hand1.noOfRank(Rank.TWO);
-        System.out.println("Yoy have "+ hand1.noOfRank(Rank.TWO) + "cards of rank 2 ");
+        //hand1.noOfRank(cardmodel.Rank.TWO);
+        System.out.println("Yoy have "+ hand1.noOfSuit(Suit.HEARTS) + "cards of rank HEARTHS ");
 
 
 

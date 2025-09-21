@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+package cardmodel;
 
 /**
  * A static method for sorting Comparables, i.e. objects of
@@ -37,26 +35,26 @@ public class SortMain {
 
         /*
         // some cards
-        Card[] cards = new Card[5];
-        cards[0] = new Card(Rank.ACE, Suit.CLUBS);
-        cards[1] = new Card(Rank.TEN, Suit.HEARTS);
-        cards[2] = new Card(Rank.ACE, Suit.SPADES);
-        cards[3] = new Card(Rank.KING, Suit.CLUBS);
-        cards[4] = new Card(Rank.TWO, Suit.DIAMONDS);
+        cardmodel.Card[] cards = new cardmodel.Card[5];
+        cards[0] = new cardmodel.Card(cardmodel.Rank.ACE, cardmodel.Suit.CLUBS);
+        cards[1] = new cardmodel.Card(cardmodel.Rank.TEN, cardmodel.Suit.HEARTS);
+        cards[2] = new cardmodel.Card(cardmodel.Rank.ACE, cardmodel.Suit.SPADES);
+        cards[3] = new cardmodel.Card(cardmodel.Rank.KING, cardmodel.Suit.CLUBS);
+        cards[4] = new cardmodel.Card(cardmodel.Rank.TWO, cardmodel.Suit.DIAMONDS);
 
         // sort the objects in the array
         /*
-        SortMain.bubbleSort(cards);
-        for(Card c : cards) {
+        cardmodel.SortMain.bubbleSort(cards);
+        for(cardmodel.Card c : cards) {
             System.out.println(c);
         }
 
 
         // create 52 cards
-        List<Card> cards = new ArrayList<>();
-        for(Suit s : Suit.values()) {
-            for(Rank r : Rank.values()) {
-                cards.add(new Card(r, s));
+        List<cardmodel.Card> cards = new ArrayList<>();
+        for(cardmodel.Suit s : cardmodel.Suit.values()) {
+            for(cardmodel.Rank r : cardmodel.Rank.values()) {
+                cards.add(new cardmodel.Card(r, s));
             }
         }
         System.out.println(cards);
