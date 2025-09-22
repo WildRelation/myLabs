@@ -39,7 +39,7 @@ public class PsUserInterface {
     // Visar menyn
     private void showMenu() {
         System.out.println("---Menu---");
-        System.out.println("N Start a new Game");
+        System.out.println("N New Game");
         System.out.println("X Exit");
         System.out.println("-----------");
     }
@@ -47,7 +47,7 @@ public class PsUserInterface {
     // Startar ett nytt spel
     private void startNewGame() {
         System.out.println("N");
-        System.out.println("Initializing a new game...");
+        System.out.println("New game...");
         myGame.initNewGame();
         System.out.println("Ready.");
 
@@ -91,9 +91,9 @@ public class PsUserInterface {
                 if (pileIndex >= 0 && pileIndex <= 4) {
                     return pileIndex;
                 }
-                System.out.print("Invalid index. Select a pile [0..4]: ");
+                System.out.print("Invalid index. Select a pile between [0..4]: ");
             } catch (NumberFormatException e) {
-                System.out.print("Invalid input. Select a pile [0..4]: ");
+                System.out.print("Invalid input. Select a pile between [0..4]: ");
             }
         }
     }
