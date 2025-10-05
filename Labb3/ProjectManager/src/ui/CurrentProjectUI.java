@@ -61,6 +61,9 @@ class CurrentProjectUI {
                 case 'D':
                     viewTasks(new AllTasksMatcher());
                     deleteTask();
+                case 'S':
+                    sortTaskByPrio();
+                    viewTasks(new AllTasksMatcher());
                 case 'X':
                     break;
                 default:
@@ -94,6 +97,11 @@ class CurrentProjectUI {
         char prioChar = InputUtils.scanAndReturnFirstChar(scan);
         Prio prio = prioChar == 'H' ? Prio.High : prioChar == 'L' ? Prio.Low : Prio.Medium;
         currentProject.addTask(descr, prio);
+    }
+
+    private void sortTaskByPrio(){
+        currentProject.sortTasksByPrio();
+
     }
 
     private void updateTask() {
@@ -141,6 +149,7 @@ class CurrentProjectUI {
         System.out.println("A - add task");
         System.out.println("U - update task");
         System.out.println("D - delete task");
+        System.out.println("S - sort tasks by priority");
         System.out.println("X - exit project menu");
         System.out.println("----------");
     }

@@ -43,10 +43,14 @@ public class MainUI {
                     break;
                 case 'P':
                     projectStatus();
+                case 'G':
+                    showAllProjects();
                     break;
                 case 'D':
                     deleteProject();
                     break;
+                case 'S':
+                    sortProjects();
                 case 'X':
                     break;
                 default:
@@ -85,11 +89,17 @@ public class MainUI {
     }
 
 
-    public void projectStatus(){
+    private void projectStatus(){
         System.out.print("Project id? ");
         int id = scan.nextInt();
         scan.nextLine();
         manager.projectState(id);
+
+    }
+
+    public void sortProjects(){
+        manager.sortProjectsByName();
+        manager.showAllProjects();
 
     }
 
@@ -118,14 +128,20 @@ public class MainUI {
             System.out.println("Project not found");
         }
     }
+    private void showAllProjects() {
+        manager.showAllProjects();
+    }
+
 
     private void printMainMenu() {
         System.out.println("---Main menu---");
         System.out.println("F - find project");
         System.out.println("A - add project");
         System.out.println("P - project status");
+        System.out.println("G - get all projects");
         System.out.println("M - manage project");
         System.out.println("D - delete project");
+        System.out.println("S - sort projects by name");
         System.out.println("X - exit");
         System.out.println("----------");
     }
